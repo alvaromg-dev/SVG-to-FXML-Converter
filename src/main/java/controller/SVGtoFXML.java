@@ -1,8 +1,6 @@
 package controller;
 
-import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
-import javafx.scene.control.Button;
 import javafx.scene.control.ColorPicker;
 import javafx.scene.control.Label;
 import javafx.scene.control.TextArea;
@@ -24,10 +22,11 @@ public class SVGtoFXML {
     // #### VARIABLES #################
     // GUI
     @FXML
-    public Label statusLabel;
-    public Button openButton;
-    public TextArea howToUseTextArea;
-    public ColorPicker colorPicker;
+    private Label statusLabel;
+    @FXML
+    private TextArea howToUseTextArea;
+    @FXML
+    private ColorPicker colorPicker;
 
     // Values
     private String svgFilePath;
@@ -185,7 +184,7 @@ public class SVGtoFXML {
     }
 
     // Fix color picker label
-    public void colorPickerLabel(ActionEvent actionEvent) {
+    public void colorPickerLabel() {
         Color color = this.colorPicker.getValue();
         String colorHexValue = Utils.colorToHex(color);
         Label label = (Label) this.colorPicker.lookup(".color-picker-label");
